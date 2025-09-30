@@ -1,0 +1,46 @@
+# pyproject.toml for raptor-rag library
+# Add this file to the root of your forked raptor-rag repository
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "raptor-rag"
+version = "0.1.0"
+description = "RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Profintegra"}
+]
+keywords = ["rag", "retrieval", "nlp", "ai"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "numpy>=1.24.0",
+    "openai>=1.0.0",
+    "tiktoken>=0.4.0",
+    "sentence-transformers>=2.2.0",
+    "torch>=2.0.0",
+    "scikit-learn>=1.2.0",
+    "umap-learn>=0.5.0",
+    "pandas>=1.5.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/profintegra/raptor-rag"
+Repository = "https://github.com/profintegra/raptor-rag"
+
+[tool.setuptools]
+packages = {find = {}}
