@@ -51,7 +51,7 @@ jobs:
           enable-cache: true
           cache-dependency-glob: "**/pyproject.toml"
       - working-directory: integrations/langchain-raptor-rag
-        run: uv run --extra dev pytest -m "not integration"
+        run: uv run --extra dev pytest
 
   integration-llama-index:
     name: Test llama-index-raptor-rag
@@ -63,4 +63,4 @@ jobs:
           enable-cache: true
           cache-dependency-glob: "**/pyproject.toml"
       - working-directory: integrations/llama-index-raptor-rag
-        run: uv run --extra dev pytest -m "not integration"
+        run: uv run --extra dev pytest

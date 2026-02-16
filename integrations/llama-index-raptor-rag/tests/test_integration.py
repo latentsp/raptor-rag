@@ -8,7 +8,6 @@ from __future__ import annotations
 
 import hashlib
 
-import pytest
 from llama_index.core.schema import NodeWithScore
 from raptor import (
     BaseEmbeddingModel,
@@ -72,13 +71,13 @@ def _build_ra() -> RetrievalAugmentation:
     embedding_model = StubEmbeddingModel()
     config = RetrievalAugmentationConfig(
         embedding_model=embedding_model,
-        summarization_model=StubSummarizationModel(),
         qa_model=StubQAModel(),
         tree_builder_config=ClusterTreeConfig(
             reduction_dimension=2,
             num_layers=1,
             max_tokens=30,
             summarization_length=20,
+            summarization_model=StubSummarizationModel(),
             embedding_models={"EMB": embedding_model},
             cluster_embedding_model="EMB",
         ),
@@ -90,7 +89,6 @@ def _build_ra() -> RetrievalAugmentation:
     return ra
 
 
-@pytest.mark.integration
 class TestLlamaIndexIntegration:
     def test_retrieve_returns_nodes_with_score(self):
         ra = _build_ra()
