@@ -3,31 +3,58 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Virtual environments
+.venv/
+venv/
+env/
+
+# uv
+uv.lock
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
 # Vim
 *.swp
 
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# mac
+# macOS
 .DS_Store
 
-# Other
+# IDEs
 .vscode
+.idea
+
+# Environment files
+*.env
+.env
+
+# Dev tools
+.devbox/
+.pytest_cache/
+.ruff_cache/
+
+# Benchmark caches
+benchmarks/.cache/
+benchmarks/*.partial.json
+
+# Regenerated artifacts
+data/cinderella
+
+# Project-specific
 *.tsv
 *.pt
 gpt*.txt
-*.env
 local/
 local_*
-build/
-*.egg-info/
 !/data/*.json
-/dist/
 checklist.md
 finetuning_ckpts/
 * copy*
-.idea
 assertion.log
 *.log
 *.db
