@@ -8,6 +8,8 @@ from __future__ import annotations
 
 import hashlib
 
+import pytest
+
 from langchain_core.documents import Document
 from raptor import (
     BaseEmbeddingModel,
@@ -89,6 +91,7 @@ def _build_ra() -> RetrievalAugmentation:
     return ra
 
 
+@pytest.mark.integration
 class TestLangChainIntegration:
     def test_invoke_returns_documents(self):
         ra = _build_ra()

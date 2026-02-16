@@ -54,3 +54,6 @@ combine-as-imports = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+markers = [
+    "integration: marks tests requiring API keys",
+]
