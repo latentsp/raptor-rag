@@ -41,11 +41,12 @@ dependencies = [
     "tenacity>=8.2.0",
     "litellm>=1.30.0",
     "tqdm>=4.60.0",
+    "urllib3>=2.6.3",
 ]
 
 [project.optional-dependencies]
 reranker = ["sentence-transformers>=2.2.0", "torch>=2.0.0"]
-huggingface = ["sentence-transformers>=2.2.0", "torch>=2.0.0", "transformers>=4.30.0"]
+huggingface = ["sentence-transformers>=2.2.0", "torch>=2.0.0", "transformers>=4.53.0"]
 faiss = ["faiss-cpu>=1.7.0"]
 benchmarks = ["datasets>=2.14.0", "rouge-score>=0.1.2", "nltk>=3.8.0"]
 all = [
