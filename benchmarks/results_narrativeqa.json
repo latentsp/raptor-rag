@@ -1,0 +1,73 @@
+{
+  "benchmark": "narrativeqa",
+  "config": {
+    "model": "gpt-4.1-nano",
+    "top_k": 5,
+    "max_tokens": 100,
+    "num_layers": 5,
+    "num_docs": 1,
+    "num_questions": 5
+  },
+  "metrics": {
+    "rouge_l": 0.37687330881842784,
+    "meteor": 0.3900868578169756,
+    "n": 5
+  },
+  "results": [
+    {
+      "answer": "Mark Hunter is a high school student in a sleepy suburb of Phoenix, Arizona, who starts an FM pirate radio station from his parents' basement. He is portrayed as a loner and outsider, using his radio station as an outlet for his teenage angst and views on society.",
+      "gold_answers": [
+        "He is a high school student in Phoenix.",
+        "A loner and outsider student with a radio station."
+      ],
+      "rouge_l": 0.25000000000000006,
+      "meteor": 0.560374149659864,
+      "question_id": "0025577043f5090cd603c6aea60f26e236195594_0",
+      "retrieval_time_s": 0.311
+    },
+    {
+      "answer": "The radio station takes place in the basement of Mark Hunter's parents' house in a sleepy suburb of Phoenix, Arizona.",
+      "gold_answers": [
+        "It takes place in Mark's parents basement. ",
+        "Phoenix, Arizona"
+      ],
+      "rouge_l": 0.4137931034482759,
+      "meteor": 0.3078982597054886,
+      "question_id": "0025577043f5090cd603c6aea60f26e236195594_1",
+      "retrieval_time_s": 0.442
+    },
+    {
+      "answer": "More students tune into Mark's show because he speaks out about what is going on at his school and in the community, sharing outsider views and addressing issues that resonate with them. His honest and rebellious messages attract an increasing audience as they relate to his perspective and the content of his broadcasts.",
+      "gold_answers": [
+        "Mark talks about what goes on at school and in the community.",
+        "Because he has a thing to say about what is happening at his school and the community."
+      ],
+      "rouge_l": 0.30985915492957744,
+      "meteor": 0.49622437971952543,
+      "question_id": "0025577043f5090cd603c6aea60f26e236195594_2",
+      "retrieval_time_s": 0.283
+    },
+    {
+      "answer": "A student named Malcolm commits suicide.",
+      "gold_answers": [
+        "Malcolm.",
+        "Malcolm."
+      ],
+      "rouge_l": 0.2857142857142857,
+      "meteor": 0.0,
+      "question_id": "0025577043f5090cd603c6aea60f26e236195594_3",
+      "retrieval_time_s": 0.396
+    },
+    {
+      "answer": "Paige jams her various medals and accolades into the microwave.",
+      "gold_answers": [
+        "She jams her medals and accolades. ",
+        "Her award medals"
+      ],
+      "rouge_l": 0.625,
+      "meteor": 0.5859375,
+      "question_id": "0025577043f5090cd603c6aea60f26e236195594_4",
+      "retrieval_time_s": 0.739
+    }
+  ]
+}

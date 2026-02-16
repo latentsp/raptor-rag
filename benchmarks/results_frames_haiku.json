@@ -1,0 +1,52 @@
+{
+  "benchmark": "frames",
+  "config": {
+    "model": "anthropic/claude-haiku-4-5-20251001",
+    "top_k": 5,
+    "max_tokens": 100,
+    "num_layers": 5,
+    "num_docs": 5,
+    "num_questions": 5
+  },
+  "metrics": {
+    "accuracy": 0.0,
+    "n": 5
+  },
+  "results": [
+    {
+      "answer": "# Answer\n\nTo solve this, I need to identify:\n\n1. **The 15th First Lady's mother's first name**\n2. **The second assassinated president's mother's maiden name**\n\nThe 15th President was James Buchanan (1857-1861), who never married. His niece Harriet Lane served as his White House hostess, making her an \"acting\" first lady. However, the actual 15th First Lady in the official count would be different.\n\nThe 15th First Lady was Abigail Powers Fillmore (wife of Millard Fillmore, 13th President). Her mo",
+      "gold": "Jane Ballou",
+      "correct": 0.0,
+      "question_id": "frames_q0",
+      "retrieval_time_s": 0.386
+    },
+    {
+      "answer": "# Answer\n\nTo solve this problem, I need to identify:\n\n1. **The Charlotte Bront\u00eb book published in 1847**: This is **Jane Eyre**\n\n2. **The Dewey Decimal Classification for Jane Eyre**: Jane Eyre, being a work of English fiction, falls under the Dewey Decimal Classification of **823** (English fiction)\n\n3. **Bronte Tower's height**: 823 feet\n\n4. **Where it would rank**: According to the context provided, the list ranks \"completed and topped out New York City skyscrapers that stand at least 650 fee",
+      "gold": "37th",
+      "correct": 0.0,
+      "question_id": "frames_q1",
+      "retrieval_time_s": 0.357
+    },
+    {
+      "answer": "# Answer\n\nBased on the context provided:\n\n- The US Capitol is located in Washington, D.C., which is in the District of Columbia (not a state)\n- Punxsutawney Phil resides in Pennsylvania\n- The Groundhog Day tradition formally began in 1887\n\nHowever, the question asks about making a prediction \"in the same state as the US capitol.\" Since the US Capitol is not located in a state, this question contains a factual impossibility.\n\nIf the question intended to ask how many years earlier Phil would need ",
+      "gold": "87",
+      "correct": 0.0,
+      "question_id": "frames_q2",
+      "retrieval_time_s": 0.302
+    },
+    {
+      "answer": "# Answer\n\nBased on the context provided, I cannot definitively answer this question because:\n\n1. The context does not specify which London club last won the UEFA Champions League or when that occurred.\n\n2. The context does not provide information about FIFA World Cup holders as of August 1, 2024.\n\nWhile the context mentions that England has won the Champions League 15 times with six different clubs (the most winning teams), it does not identify which of those clubs are from London or when the mo",
+      "gold": "France",
+      "correct": 0.0,
+      "question_id": "frames_q3",
+      "retrieval_time_s": 0.418
+    },
+    {
+      "answer": "I don't have enough information in the provided context to answer this question.\n\nThe context tells me that \"All Little Devils\" is the third studio album by Dismal Euphony (1999), but it does not specify which record label produced this album. Without knowing the record label, I cannot identify which was \"the first band to make it in the top 200\" under that label, and therefore cannot determine the name of that band's vocalist.\n\nTo answer this question, I would need additional information about:",
+      "gold": "Jens Kidman",
+      "correct": 0.0,
+      "question_id": "frames_q4",
+      "retrieval_time_s": 0.611
+    }
+  ]
+}

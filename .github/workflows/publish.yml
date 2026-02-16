@@ -1,0 +1,54 @@
+name: Publish to PyPI
+
+on:
+  push:
+    tags: ["v*"]
+
+jobs:
+  publish-raptor-rag:
+    name: Publish raptor-rag
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+      - run: uv build
+      - uses: pypa/gh-action-pypi-publish@release/v1
+
+  publish-langchain:
+    name: Publish langchain-raptor-rag
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+      - working-directory: integrations/langchain-raptor-rag
+        run: uv build
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: integrations/langchain-raptor-rag/dist/
+
+  publish-llama-index:
+    name: Publish llama-index-raptor-rag
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+      - working-directory: integrations/llama-index-raptor-rag
+        run: uv build
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: integrations/llama-index-raptor-rag/dist/

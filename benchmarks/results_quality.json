@@ -1,0 +1,35 @@
+{
+  "benchmark": "quality",
+  "config": {
+    "model": "gpt-4.1-nano",
+    "top_k": 5,
+    "max_tokens": 100,
+    "num_layers": 5,
+    "num_docs": 1,
+    "num_questions": 2
+  },
+  "metrics": {
+    "accuracy": 0.0,
+    "hard_accuracy": 0.0,
+    "n": 2,
+    "n_hard": 1
+  },
+  "results": [
+    {
+      "predicted": "C",
+      "gold": "B",
+      "is_hard": false,
+      "correct": 0.0,
+      "question_id": "52845_52845_75VB1ISR_1",
+      "retrieval_time_s": 0.421
+    },
+    {
+      "predicted": "A",
+      "gold": "B",
+      "is_hard": true,
+      "correct": 0.0,
+      "question_id": "52845_52845_75VB1ISR_2",
+      "retrieval_time_s": 0.273
+    }
+  ]
+}

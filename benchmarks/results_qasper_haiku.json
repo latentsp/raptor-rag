@@ -1,0 +1,95 @@
+{
+  "benchmark": "qasper",
+  "config": {
+    "model": "anthropic/claude-haiku-4-5-20251001",
+    "top_k": 5,
+    "max_tokens": 100,
+    "num_layers": 5,
+    "num_docs": 2,
+    "num_questions": 5
+  },
+  "metrics": {
+    "token_f1": 0.27013974385248496,
+    "n": 5,
+    "by_answer_type": {
+      "extractive": 0.27489406779661013,
+      "abstractive": 0.30562770562770564,
+      "unanswerable": 0.1896551724137931
+    }
+  },
+  "results": [
+    {
+      "answer": "# AntiScam Dataset Size\n\nBased on the context provided, the **AntiScam dataset** contains:\n\n- **220 human-human dialogues** (baseline conversations between humans)\n- **225 human-model dialogues** (volunteers interacting with AI systems)\n\n**Total: 445 dialogues**\n\nAdditional details:\n- Average conversation length: **12-45 turns**\n- Data split: 80% training, 10% validation, 10% testing",
+      "gold_answers": [
+        " 3,044 sentences in 100 dialogs",
+        "220 human-human dialogs",
+        "220 human-human dialogs.  3,044 sentences in 100 dialogs",
+        "220 human-human dialogs. The average conversation length is 12.45 turns and the average utterance length is 11.13 words. ",
+        "220 human-human dialogs",
+        "3,044 sentences in 100 dialogs"
+      ],
+      "answer_type": "extractive",
+      "token_f1": 0.23728813559322032,
+      "question_id": "397a1e851aab41c455c2b284f5e4947500d797f0",
+      "retrieval_time_s": 0.299
+    },
+    {
+      "answer": "# How Intent is Annotated\n\nBased on the context provided, intent annotation follows a **hierarchical scheme** with the following structure:\n\n## Hierarchical Levels\n\n1. **On-Task Intents**: Task-specific actions that vary depending on the particular dialog task\n   - For the AntiScam dataset: elicitation, providing_information, and refusal\n   - For the PersuasionForGood dataset: nine on-task intents (specific ones not fully detailed in the excerpt)\n\n2. **Off-Task Intents**: General intents that ap",
+      "gold_answers": [
+        "using a role-playing task on the Amazon Mechanical Turk platform and collecting typed conversations",
+        "Separate on-task and off task intents and annotate on task for data set specific intents, while annotating  off task intents with a fixed set of general intents.",
+        "On-task dialog are annotated as on-task intents , the other dialog are annotated as pre-defined off-task intents.",
+        "separate on-task and off-task intents on-task intents are key actions that can vary among different tasks, we need to specifically define on-task intents for each task off-task content is too general to design task-specific intents, we choose common dialog acts as the categories",
+        "we design a hierarchical intent annotation scheme for non-collaborative tasks. We first separate on-task and off-task intents. As on-task intents are key actions that can vary among different tasks, we need to specifically define on-task intents for each task. On the other hand, since off-task content is too general to design task-specific intents, we choose common dialog acts as the categories.  In the intent annotation scheme shown in Table TABREF2, we list the designed intent annotation scheme for the newly collected AntiScam dataset and the PersuasionForGood dataset. We first define on-task intents for the datasets, which are key actions in the task. Since our AntiScam focuses on understanding and reacting towards elicitations, we define elicitation, providing_information and refusal as on-task intents. In the PersuasionForGood dataset, we define nine on-task intents in Table TABREF2 based on the original PersuasionForGood dialog act annotation scheme For specific tasks, we also design a semantic slot annotation scheme for annotating sentences based on their semantic content. We identify 13 main semantic slots in the anti-scam task, for example, credit card numbers. We present a detailed semantic slot annotation in Table TABREF3. Following BIBREF1, we segment each conversation turn into single sentences and then annotate each sentence rather than turns.",
+        "using a hierarchical scheme where on-task intents uses task-related intents for representation and off-task intents chooses dialog acts that convey the syntax information"
+      ],
+      "answer_type": "abstractive",
+      "token_f1": 0.3636363636363637,
+      "question_id": "cc8b4ed3985f9bfbe1b5d7761b31d9bd6a965444",
+      "retrieval_time_s": 0.405
+    },
+    {
+      "answer": "# Baselines Outperformed by This Work\n\nBased on the context provided, this work outperforms the following baselines:\n\n1. **TransferTransfo (Vanilla)**: The original TransferTransfo framework trained with undelexicalized data. MISSA significantly outperforms this baseline on on-task content and maintains longer conversations (14.9 turns vs. 8.5 turns).\n\n2. **Hybrid Model**: A hybrid dialog system combining vanilla TransferTransfo with other components. MISSA performs better than the hybrid model,",
+      "gold_answers": [
+        "TransferTransfo and Hybrid ",
+        "TransferTransfo  hybrid model",
+        "TransferTransfo Hybrid",
+        "TransferTransfo Hybrid",
+        "TransferTransfo The vanilla TransferTransfo framework Hybrid Following BIBREF4 yu2017learning, we also build a hybrid dialog system by combining vanilla TransferTransfo and MISSA",
+        "TransferTransfo Hybrid"
+      ],
+      "answer_type": "extractive",
+      "token_f1": 0.31249999999999994,
+      "question_id": "f7662b11e87c1e051e13799413f3db459ac3e19c",
+      "retrieval_time_s": 0.315
+    },
+    {
+      "answer": "# Evaluation Metrics and Criteria\n\nBased on the context, the evaluation metrics used to assess model performance include:\n\n## Automatic Evaluation Metrics\n\n1. **Perplexity** - The canonical measure of language model quality that indicates the error rate of expected words\n\n2. **Response-Intent Prediction (RIP)** - Evaluates whether the system response satisfies user intents (particularly important for non-collaborative dialog tasks)\n\n3. **Response-Slot Prediction (RSP)** - Assesses the system's a",
+      "gold_answers": [
+        "Perplexity Response-Intent Prediction (RIP) Response-Slot Prediction (RSP) Extended Response-Intent Prediction (ERIP)  Extended Response-Slot Prediction (ERSP)  Fluency Coherence  Engagement Dialog length  Task Success Score (TaskSuc)",
+        "Perplexity  Response-Intent Prediction (RIP) Response-Slot Prediction (RSP) Extended Response-Intent Prediction (ERIP) Extended Response-Slot Prediction (ERSP) Fluency  Coherence  Engagement  Dialog length (Length)  Task Success Score (TaskSuc)",
+        "Fluency Fluency is used to explore different models' language generation quality.\n\nCoherence Different from single sentence's fluency, coherence focuses more on the logical consistency between sentences in each turn.\n\nEngagement In the anti-scam scenario, one of our missions is to keep engaging with the attackers to waste their time. So we directly ask volunteers (attackers) to what extend they would like to continue chatting with the system.\n\nDialog length (Length) Engagement is a subjective metric. Anti-scam system's goal is to engage user in the conversation longer in order to limit their harm to other potential victims. So we count the dialog length as another metric to evaluate system performance.\n\nTask Success Score (TaskSuc) The other goal of the anti-scam system is to elicit attacker's personal information. We count the average type of information (name, address and phone number) that the system obtained from attackers as the task success score.",
+        "Automatic evaluation metrics (Perplexity (PPl), Response-Intent Prediction (RIP), Response-Slot Prediction(RSP), Extended Response-Intent Prediction(ERIP),  Extended Response-Slot Prediction (ERSP)) and Human Evaluation Metrics (Fluency, Coherence, Engagement, Lenhth, TaskSuc)",
+        "Automatic metrics used: Perplexity, RIP, RSP, ERIP ERSP.\nHuman evaluation metrics used: Fluency, Coherence, Engagement, Dialog length and Task Success Score."
+      ],
+      "answer_type": "abstractive",
+      "token_f1": 0.2476190476190476,
+      "question_id": "b584739622d0c53830e60430b13fd3ae6ff43669",
+      "retrieval_time_s": 0.275
+    },
+    {
+      "answer": "# Accuracy Comparison with SOTA\n\nBased on the provided context, **the document does not explicitly state the accuracy of this model compared to state-of-the-art (SOTA) approaches.**\n\nHowever, the context does mention:\n\n1. **Evaluation Method**: The authors used GERBIL to evaluate OpenTapioca against other approaches and reported \"InKB micro and macro F1 scores on test sets\"\n\n2. **Known Limitation**: The document acknowledges that \"accuracy degrades on longer texts which require relying more on t",
+      "gold_answers": [
+        "unanswerable",
+        "The model improves the state of the art performance for the ISTEX dataset (F1 micro: 0.870, F1 macro: 0.858) and for the Microposts 2016 dataset (F1 micro:  0.087).",
+        "The micro and macro f1-scores of this model are 0.482 and 0.399 on the AIDA-CoNLL dataset, 0.087 and 0.515 on the Microposts 2016 dataset, 0.870 and 0.858 on the ISTEX-1000 dataset, 0.335 and 0.310 on the RSS-500 dataset",
+        "The accuracy ",
+        "unanswerable"
+      ],
+      "answer_type": "unanswerable",
+      "token_f1": 0.1896551724137931,
+      "question_id": "2849c2944c47cf1de62b539c5d3c396a3e8d283a",
+      "retrieval_time_s": 0.266
+    }
+  ]
+}

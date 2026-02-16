@@ -1,0 +1,95 @@
+{
+  "benchmark": "qasper",
+  "config": {
+    "model": "gpt-4.1-nano",
+    "top_k": 5,
+    "max_tokens": 100,
+    "num_layers": 5,
+    "num_docs": 2,
+    "num_questions": 5
+  },
+  "metrics": {
+    "token_f1": 0.2996871148502648,
+    "n": 5,
+    "by_answer_type": {
+      "extractive": 0.34898278560250395,
+      "abstractive": 0.301225100533059,
+      "unanswerable": 0.19801980198019803
+    }
+  },
+  "results": [
+    {
+      "answer": "The AntiScam dataset comprises 220 human-human dialogues.",
+      "gold_answers": [
+        " 3,044 sentences in 100 dialogs",
+        "220 human-human dialogs",
+        "220 human-human dialogs.  3,044 sentences in 100 dialogs",
+        "220 human-human dialogs. The average conversation length is 12.45 turns and the average utterance length is 11.13 words. ",
+        "220 human-human dialogs",
+        "3,044 sentences in 100 dialogs"
+      ],
+      "answer_type": "extractive",
+      "token_f1": 0.4444444444444444,
+      "question_id": "397a1e851aab41c455c2b284f5e4947500d797f0",
+      "retrieval_time_s": 0.397
+    },
+    {
+      "answer": "Intent annotation is performed using a hierarchical scheme that distinguishes between on-task and off-task intents. Specifically:\n\n- **On-task intents** are task-specific actions relevant to the particular dataset, such as elicitation, providing information, or refusal in the AntiScam dataset, and donation-related intents in the PersuasionForGood dataset. These intents directly represent key actions within the task.\n\n- **Off-task intents** capture general dialog acts that convey syntactic and fu",
+      "gold_answers": [
+        "using a role-playing task on the Amazon Mechanical Turk platform and collecting typed conversations",
+        "Separate on-task and off task intents and annotate on task for data set specific intents, while annotating  off task intents with a fixed set of general intents.",
+        "On-task dialog are annotated as on-task intents , the other dialog are annotated as pre-defined off-task intents.",
+        "separate on-task and off-task intents on-task intents are key actions that can vary among different tasks, we need to specifically define on-task intents for each task off-task content is too general to design task-specific intents, we choose common dialog acts as the categories",
+        "we design a hierarchical intent annotation scheme for non-collaborative tasks. We first separate on-task and off-task intents. As on-task intents are key actions that can vary among different tasks, we need to specifically define on-task intents for each task. On the other hand, since off-task content is too general to design task-specific intents, we choose common dialog acts as the categories.  In the intent annotation scheme shown in Table TABREF2, we list the designed intent annotation scheme for the newly collected AntiScam dataset and the PersuasionForGood dataset. We first define on-task intents for the datasets, which are key actions in the task. Since our AntiScam focuses on understanding and reacting towards elicitations, we define elicitation, providing_information and refusal as on-task intents. In the PersuasionForGood dataset, we define nine on-task intents in Table TABREF2 based on the original PersuasionForGood dialog act annotation scheme For specific tasks, we also design a semantic slot annotation scheme for annotating sentences based on their semantic content. We identify 13 main semantic slots in the anti-scam task, for example, credit card numbers. We present a detailed semantic slot annotation in Table TABREF3. Following BIBREF1, we segment each conversation turn into single sentences and then annotate each sentence rather than turns.",
+        "using a hierarchical scheme where on-task intents uses task-related intents for representation and off-task intents chooses dialog acts that convey the syntax information"
+      ],
+      "answer_type": "abstractive",
+      "token_f1": 0.33217993079584773,
+      "question_id": "cc8b4ed3985f9bfbe1b5d7761b31d9bd6a965444",
+      "retrieval_time_s": 0.303
+    },
+    {
+      "answer": "The work outperforms the following baseline models:\n\n1. **TransferTransfo** \u2013 the primary comparison model trained on undelexicalized data.\n2. **Hybrid Model** \u2013 which combines vanilla TransferTransfo with MISSA, following the approach in BIBREF4.\n\nAdditionally, the results indicate that MISSA performs better than the TransferTransfo baseline on various metrics, including maintaining longer conversations and higher task success scores.",
+      "gold_answers": [
+        "TransferTransfo and Hybrid ",
+        "TransferTransfo  hybrid model",
+        "TransferTransfo Hybrid",
+        "TransferTransfo Hybrid",
+        "TransferTransfo The vanilla TransferTransfo framework Hybrid Following BIBREF4 yu2017learning, we also build a hybrid dialog system by combining vanilla TransferTransfo and MISSA",
+        "TransferTransfo Hybrid"
+      ],
+      "answer_type": "extractive",
+      "token_f1": 0.25352112676056343,
+      "question_id": "f7662b11e87c1e051e13799413f3db459ac3e19c",
+      "retrieval_time_s": 0.269
+    },
+    {
+      "answer": "The evaluation metrics and criteria used to evaluate the model performance are as follows:\n\n**Automatic Evaluation Metrics:**\n1. **Perplexity:**  \n   - Measures the error rate in predicting the expected next word.  \n   - Serves as the canonical measure for language model quality, with lower perplexity indicating better performance.  \n   - Used to assess overall model performance by averaging scores over dialogue turns.\n\n2. **Response-Intent Prediction (RIP) & Response-Slot Prediction (RSP):**  \n",
+      "gold_answers": [
+        "Perplexity Response-Intent Prediction (RIP) Response-Slot Prediction (RSP) Extended Response-Intent Prediction (ERIP)  Extended Response-Slot Prediction (ERSP)  Fluency Coherence  Engagement Dialog length  Task Success Score (TaskSuc)",
+        "Perplexity  Response-Intent Prediction (RIP) Response-Slot Prediction (RSP) Extended Response-Intent Prediction (ERIP) Extended Response-Slot Prediction (ERSP) Fluency  Coherence  Engagement  Dialog length (Length)  Task Success Score (TaskSuc)",
+        "Fluency Fluency is used to explore different models' language generation quality.\n\nCoherence Different from single sentence's fluency, coherence focuses more on the logical consistency between sentences in each turn.\n\nEngagement In the anti-scam scenario, one of our missions is to keep engaging with the attackers to waste their time. So we directly ask volunteers (attackers) to what extend they would like to continue chatting with the system.\n\nDialog length (Length) Engagement is a subjective metric. Anti-scam system's goal is to engage user in the conversation longer in order to limit their harm to other potential victims. So we count the dialog length as another metric to evaluate system performance.\n\nTask Success Score (TaskSuc) The other goal of the anti-scam system is to elicit attacker's personal information. We count the average type of information (name, address and phone number) that the system obtained from attackers as the task success score.",
+        "Automatic evaluation metrics (Perplexity (PPl), Response-Intent Prediction (RIP), Response-Slot Prediction(RSP), Extended Response-Intent Prediction(ERIP),  Extended Response-Slot Prediction (ERSP)) and Human Evaluation Metrics (Fluency, Coherence, Engagement, Lenhth, TaskSuc)",
+        "Automatic metrics used: Perplexity, RIP, RSP, ERIP ERSP.\nHuman evaluation metrics used: Fluency, Coherence, Engagement, Dialog length and Task Success Score."
+      ],
+      "answer_type": "abstractive",
+      "token_f1": 0.2702702702702703,
+      "question_id": "b584739622d0c53830e60430b13fd3ae6ff43669",
+      "retrieval_time_s": 0.306
+    },
+    {
+      "answer": "The provided context does not specify the exact accuracy or performance metrics of the described model, nor does it provide a direct comparison to the state-of-the-art (SOTA) results. It mentions evaluation methods such as GERBIL BIBREF23 and reports micro and macro F1 scores on test sets, but specific numerical values or a comparison to SOTA are not included. Therefore, I cannot determine the accuracy of this model relative to the SOTA based on the given information.",
+      "gold_answers": [
+        "unanswerable",
+        "The model improves the state of the art performance for the ISTEX dataset (F1 micro: 0.870, F1 macro: 0.858) and for the Microposts 2016 dataset (F1 micro:  0.087).",
+        "The micro and macro f1-scores of this model are 0.482 and 0.399 on the AIDA-CoNLL dataset, 0.087 and 0.515 on the Microposts 2016 dataset, 0.870 and 0.858 on the ISTEX-1000 dataset, 0.335 and 0.310 on the RSS-500 dataset",
+        "The accuracy ",
+        "unanswerable"
+      ],
+      "answer_type": "unanswerable",
+      "token_f1": 0.19801980198019803,
+      "question_id": "2849c2944c47cf1de62b539c5d3c396a3e8d283a",
+      "retrieval_time_s": 0.31
+    }
+  ]
+}

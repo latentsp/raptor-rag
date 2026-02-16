@@ -1,46 +1,88 @@
-# pyproject.toml for raptor-rag library
-# Add this file to the root of your forked raptor-rag repository
-
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [project]
 name = "raptor-rag"
-version = "0.1.0"
+version = "0.3.0"
 description = "RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval"
 readme = "README.md"
-requires-python = ">=3.8"
-license = {text = "MIT"}
+requires-python = ">=3.10"
+license = { text = "MIT" }
 authors = [
-    {name = "Profintegra"}
+    { name = "Parth Sarthi" },
+    { name = "Salman Abdullah" },
+    { name = "Aditi Tuli" },
+    { name = "Shubh Khanna" },
+    { name = "Anna Goldie" },
+    { name = "Christopher D. Manning" },
 ]
-keywords = ["rag", "retrieval", "nlp", "ai"]
+maintainers = [{ name = "Latent Engineering Firm Ltd.", email = "info@reachlatent.com" }]
+keywords = ["rag", "retrieval", "nlp", "ai", "raptor", "tree", "hierarchical"]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 
 dependencies = [
     "numpy>=1.24.0",
-    "openai>=1.0.0",
     "tiktoken>=0.4.0",
-    "sentence-transformers>=2.2.0",
-    "torch>=2.0.0",
     "scikit-learn>=1.2.0",
-    "umap-learn>=0.5.0",
-    "pandas>=1.5.0",
+    "umap-learn>=0.5.6",
+    "scipy>=1.10.0",
+    "tenacity>=8.2.0",
+    "litellm>=1.30.0",
+    "tqdm>=4.60.0",
+]
+
+[project.optional-dependencies]
+reranker = ["sentence-transformers>=2.2.0", "torch>=2.0.0"]
+huggingface = ["sentence-transformers>=2.2.0", "torch>=2.0.0", "transformers>=4.30.0"]
+faiss = ["faiss-cpu>=1.7.0"]
+benchmarks = ["datasets>=2.14.0", "rouge-score>=0.1.2", "nltk>=3.8.0"]
+all = [
+    "raptor-rag[reranker]",
+    "raptor-rag[huggingface]",
+    "raptor-rag[faiss]",
+]
+dev = [
+    "raptor-rag[all]",
+    "raptor-rag[benchmarks]",
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "ruff>=0.4.0",
 ]
 
 [project.urls]
-Homepage = "https://github.com/profintegra/raptor-rag"
-Repository = "https://github.com/profintegra/raptor-rag"
+Homepage = "https://github.com/latentsp/raptor-rag"
+Repository = "https://github.com/latentsp/raptor-rag"
+Documentation = "https://github.com/latentsp/raptor-rag#readme"
+Issues = "https://github.com/latentsp/raptor-rag/issues"
 
-[tool.setuptools]
-packages = {find = {}}
+[tool.hatch.build.targets.wheel]
+packages = ["raptor"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests requiring API keys (deselect with '-m \"not integration\"')",
+]

@@ -1,0 +1,52 @@
+{
+  "benchmark": "frames",
+  "config": {
+    "model": "gpt-4.1-nano",
+    "top_k": 5,
+    "max_tokens": 100,
+    "num_layers": 5,
+    "num_docs": 5,
+    "num_questions": 5
+  },
+  "metrics": {
+    "accuracy": 0.0,
+    "n": 5
+  },
+  "results": [
+    {
+      "answer": "Let's analyze the question step by step:\n\n1. **Identify the 15th First Lady of the United States' mother:**\n   - The 15th First Lady was **Lucy Webb Hayes**.\n   - Her mother was **Mary Ann Webb**.\n\n2. **First name of the future wife:**\n   - The question states: \"If my future wife has the same first name as the 15th first lady of the United States' mother.\"\n   - The mother's first name is **Mary**.\n   - Therefore, the future wife's first name is **Mary**.\n\n3. **Identify the second assassinated pr",
+      "gold": "Jane Ballou",
+      "correct": 0.0,
+      "question_id": "frames_q0",
+      "retrieval_time_s": 0.367
+    },
+    {
+      "answer": "First, identify the Dewey Decimal Classification (DDC) number for the Charlotte Bront\u00eb book published in 1847. Charlotte Bront\u00eb's most famous novel, \"Jane Eyre,\" was published in 1847.\n\nThe Dewey Decimal Classification for \"Jane Eyre\" is approximately 823.8, which falls within the 820s (English & Old English literatures). Specifically, 823.8 is the classification for English fiction from the 19th century.\n\nNext, interpret the question: the height of the Bronte Tower is the same number as the DDC",
+      "gold": "37th",
+      "correct": 0.0,
+      "question_id": "frames_q1",
+      "retrieval_time_s": 0.465
+    },
+    {
+      "answer": "The context indicates that Punxsutawney Phil's predictions date back to 1886. The United States Capitol is located in Washington, D.C., which is in the state of the District of Columbia (not a state, but a federal district). Since the question asks about making a Groundhog Day prediction in the same state as the US Capitol, and the Capitol is in Washington, D.C., we need to consider the year 1886 and the current year to determine how many years earlier Phil would have to be alive to have made a ",
+      "gold": "87",
+      "correct": 0.0,
+      "question_id": "frames_q2",
+      "retrieval_time_s": 0.308
+    },
+    {
+      "answer": "The last time the UEFA Champions League was won by a club from London was in 2012, when Chelsea FC from England (London) won the title. The FIFA World Cup holder as of August 1, 2024, was Argentina, who won the tournament in 2022. Therefore, the country that were holders of the FIFA World Cup the last time a London club won the UEFA Champions League was Argentina.",
+      "gold": "France",
+      "correct": 0.0,
+      "question_id": "frames_q3",
+      "retrieval_time_s": 0.353
+    },
+    {
+      "answer": "The third studio album by Dismal Euphony is \"All Little Devils.\" Based on the provided information, the record label that produced this album is not explicitly mentioned. However, the question asks for the name of the vocalist from the first band to make it in the top 200 under that record label.\n\nSince the record label is not specified in the provided context, I cannot determine which band or vocalist achieved this milestone. Therefore, I do not have enough information to answer the question ac",
+      "gold": "Jens Kidman",
+      "correct": 0.0,
+      "question_id": "frames_q4",
+      "retrieval_time_s": 0.595
+    }
+  ]
+}

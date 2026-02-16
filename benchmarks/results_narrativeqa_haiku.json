@@ -1,0 +1,73 @@
+{
+  "benchmark": "narrativeqa",
+  "config": {
+    "model": "anthropic/claude-haiku-4-5-20251001",
+    "top_k": 5,
+    "max_tokens": 100,
+    "num_layers": 5,
+    "num_docs": 1,
+    "num_questions": 5
+  },
+  "metrics": {
+    "rouge_l": 0.23837324966952106,
+    "meteor": 0.26035029864606835,
+    "n": 5
+  },
+  "results": [
+    {
+      "answer": "# Who is Mark Hunter?\n\nBased on the context provided, Mark Hunter is:\n\n- A **high school student** in a suburb of Phoenix, Arizona\n- A **loner and outsider** who uses an unauthorized FM pirate radio station as his outlet for teenage angst and aggression\n- The creator and operator of an **underground radio station** that broadcasts from his parents' basement\n- Known on air as **\"Hard Harry\"** or **\"Happy Harry Hard-on\"**\n- Someone who expresses outsider views about what is wrong with American soc",
+      "gold_answers": [
+        "He is a high school student in Phoenix.",
+        "A loner and outsider student with a radio station."
+      ],
+      "rouge_l": 0.14035087719298248,
+      "meteor": 0.18324607329842932,
+      "question_id": "0025577043f5090cd603c6aea60f26e236195594_0",
+      "retrieval_time_s": 0.29
+    },
+    {
+      "answer": "# Answer\n\nAccording to the context, the radio station takes place in **the basement of Mark Hunter's parents' house** in a **sleepy suburb of Phoenix, Arizona**.",
+      "gold_answers": [
+        "It takes place in Mark's parents basement. ",
+        "Phoenix, Arizona"
+      ],
+      "rouge_l": 0.3529411764705882,
+      "meteor": 0.2871410736579276,
+      "question_id": "0025577043f5090cd603c6aea60f26e236195594_1",
+      "retrieval_time_s": 0.295
+    },
+    {
+      "answer": "# Why More Students Tune Into Mark's Show\n\nAccording to the context, more and more students tune into Mark's show because **he expresses outsider views about what is wrong with American society, particularly regarding what is happening at his school and in the community**.\n\nThe students are drawn to his unauthorized radio station because Mark uses it as an outlet to speak his mind about issues affecting them\u2014giving voice to teenage angst and the problems they see around them. His willingness to ",
+      "gold_answers": [
+        "Mark talks about what goes on at school and in the community.",
+        "Because he has a thing to say about what is happening at his school and the community."
+      ],
+      "rouge_l": 0.20869565217391303,
+      "meteor": 0.41053101294065153,
+      "question_id": "0025577043f5090cd603c6aea60f26e236195594_2",
+      "retrieval_time_s": 0.325
+    },
+    {
+      "answer": "According to the context provided, a student named **Malcolm** commits suicide after Harry attempts to reason with him.",
+      "gold_answers": [
+        "Malcolm.",
+        "Malcolm."
+      ],
+      "rouge_l": 0.10526315789473684,
+      "meteor": 0.0,
+      "question_id": "0025577043f5090cd603c6aea60f26e236195594_3",
+      "retrieval_time_s": 0.346
+    },
+    {
+      "answer": "# Answer\n\nAccording to the context, Paige Woodward jams her **various medals and accolades** into a microwave and turns it on.",
+      "gold_answers": [
+        "She jams her medals and accolades. ",
+        "Her award medals"
+      ],
+      "rouge_l": 0.3846153846153846,
+      "meteor": 0.42083333333333334,
+      "question_id": "0025577043f5090cd603c6aea60f26e236195594_4",
+      "retrieval_time_s": 0.262
+    }
+  ]
+}

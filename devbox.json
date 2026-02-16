@@ -1,0 +1,33 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
+  "packages": [
+    "python@3.12",
+    "uv@latest"
+  ],
+  "env_from": ".env",
+  "shell": {
+    "init_hook": [
+      "echo 'Welcome to raptor-rag dev shell!' > /dev/null"
+    ],
+    "scripts": {
+      "test": [
+        "uv run pytest -m 'not integration'"
+      ],
+      "test-all": [
+        "uv run pytest"
+      ],
+      "lint": [
+        "uv run ruff check raptor/ tests/ integrations/"
+      ],
+      "format": [
+        "uv run ruff format raptor/ tests/ integrations/"
+      ],
+      "format-check": [
+        "uv run ruff format --check raptor/ tests/ integrations/"
+      ],
+      "build": [
+        "uv build"
+      ]
+    }
+  }
+}
