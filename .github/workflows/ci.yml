@@ -18,6 +18,7 @@ jobs:
       - uses: astral-sh/setup-uv@v4
         with:
           enable-cache: true
+          cache-dependency-glob: "**/pyproject.toml"
       - run: uv run ruff check raptor/ tests/ integrations/
 
   format:
@@ -28,6 +29,7 @@ jobs:
       - uses: astral-sh/setup-uv@v4
         with:
           enable-cache: true
+          cache-dependency-glob: "**/pyproject.toml"
       - run: uv run ruff format --check raptor/ tests/ integrations/
 
   test:
@@ -42,6 +44,7 @@ jobs:
       - uses: astral-sh/setup-uv@v4
         with:
           enable-cache: true
+          cache-dependency-glob: "**/pyproject.toml"
       - run: uv run --python ${{ matrix.python-version }} pytest -m "not integration"
 
   integration-langchain:
@@ -52,6 +55,7 @@ jobs:
       - uses: astral-sh/setup-uv@v4
         with:
           enable-cache: true
+          cache-dependency-glob: "**/pyproject.toml"
       - working-directory: integrations/langchain-raptor-rag
         run: uv run pytest
 
@@ -63,5 +67,6 @@ jobs:
       - uses: astral-sh/setup-uv@v4
         with:
           enable-cache: true
+          cache-dependency-glob: "**/pyproject.toml"
       - working-directory: integrations/llama-index-raptor-rag
         run: uv run pytest

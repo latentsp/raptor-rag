@@ -16,6 +16,7 @@ jobs:
       - uses: astral-sh/setup-uv@v4
         with:
           enable-cache: true
+          cache-dependency-glob: "**/pyproject.toml"
       - run: uv build
       - uses: pypa/gh-action-pypi-publish@release/v1
 
@@ -30,6 +31,7 @@ jobs:
       - uses: astral-sh/setup-uv@v4
         with:
           enable-cache: true
+          cache-dependency-glob: "**/pyproject.toml"
       - working-directory: integrations/langchain-raptor-rag
         run: uv build
       - uses: pypa/gh-action-pypi-publish@release/v1
@@ -47,6 +49,7 @@ jobs:
       - uses: astral-sh/setup-uv@v4
         with:
           enable-cache: true
+          cache-dependency-glob: "**/pyproject.toml"
       - working-directory: integrations/llama-index-raptor-rag
         run: uv build
       - uses: pypa/gh-action-pypi-publish@release/v1
