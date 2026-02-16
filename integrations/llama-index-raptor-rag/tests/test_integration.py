@@ -9,7 +9,6 @@ from __future__ import annotations
 import hashlib
 
 import pytest
-
 from llama_index.core.schema import NodeWithScore
 from raptor import (
     BaseEmbeddingModel,

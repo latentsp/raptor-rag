@@ -9,7 +9,6 @@ from __future__ import annotations
 import hashlib
 
 import pytest
-
 from langchain_core.documents import Document
 from raptor import (
     BaseEmbeddingModel,
