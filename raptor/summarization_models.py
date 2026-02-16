@@ -39,7 +39,10 @@ class LiteLLMSummarizationModel(BaseSummarizationModel):
         if not content or not content.strip():
             logger.warning(
                 "Empty summarization: model=%s, max_tokens=%d, finish_reason=%s, context_len=%d",
-                self.model, max_tokens, choice.finish_reason, len(context),
+                self.model,
+                max_tokens,
+                choice.finish_reason,
+                len(context),
             )
             raise ValueError("Summarization returned empty content")
         return content
